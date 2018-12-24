@@ -1,4 +1,4 @@
-package by.bsu.britishairways.some;
+package by.bsu.britishairways.pages;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -24,10 +24,10 @@ public class PageHotels extends Page {
     @FindBy(id = "hotelSearchButtonHS")
     private WebElement butSearchHotels;
 
-    @FindBy(id = "checkInGO")
+    @FindBy(name = "checkInGO")
     private WebElement inputCheckIn;
 
-    @FindBy(id = "checkOutGO")
+    @FindBy(name = "checkOutGO")
     private WebElement inputCheckOut;
 
     @FindBy(id = "adultsRoom1H")
@@ -94,7 +94,7 @@ public class PageHotels extends Page {
     }
 
     public void setCheckInDate(LocalDate date) {
-            openCheckInCalendar();
+        openCheckInCalendar();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yy");
         System.out.println(date.format(formatter));
         WebElement checkInDatePicker = driver

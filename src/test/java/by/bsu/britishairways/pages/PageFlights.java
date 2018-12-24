@@ -1,4 +1,4 @@
-package by.bsu.britishairways.some;
+package by.bsu.britishairways.pages;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

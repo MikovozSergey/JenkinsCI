@@ -1,4 +1,4 @@
-package by.bsu.britishairways.some;
+package by.bsu.britishairways.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -10,9 +10,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import by.bsu.britishairways.some.PageCars;
-import by.bsu.britishairways.some.PageFlights;
-import by.bsu.britishairways.some.PageHotels;
+import by.bsu.britishairways.pages.PageCars;
+import by.bsu.britishairways.pages.PageFlights;
+import by.bsu.britishairways.pages.PageHotels;
 
 public class BritishAirwaysTest {
     WebDriver driver;
