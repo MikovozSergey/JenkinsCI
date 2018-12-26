@@ -47,6 +47,17 @@ public class BritishAirwaysTest {
     }
 
     @Test
+    public void checkPerAdultCantChooseMoreThanOneBaby() {
+        PageFlights pageFlights = new PageFlights(driver);
+        pageFlights.clickButtonContinue();
+        pageFlights.openInputForm();
+        pageFlights.setInputTo("Moscow, Russia, DME, Domodedovo");
+        pageFlights.clickRadioButtonOneWay();
+        pageFlights.setInputAdults("2");
+        pageFlights.setInputInfants("1");
+    }
+
+    @Test
     public void dataInFieldToAndInFieldFromIsTheSame() {
         PageFlights pageFlights = new PageFlights(driver);
         pageFlights.clickButtonContinue();
@@ -72,7 +83,7 @@ public class BritishAirwaysTest {
         pageFlights.setInputTo("Moscow, Russia, DME, Domodedovo");
         pageFlights.clickRadioButtonOneWay();
         pageFlights.setInputAdults("1");
-        pageFlights.setInputInfants("2");
+        pageFlights.setInputInfants("1");
     }
 
     @Test
@@ -92,18 +103,6 @@ public class BritishAirwaysTest {
         pageHotels.clickRadioButtonHotels();
         pageHotels.setInputAdultsInRoom("3");
         Assert.assertEquals(pageHotels.foundCountInputInfantsInRoom(), 4);
-    }
-
-    @Test
-    public void childMustBeAge() {
-        PageHotels pageHotels = new PageHotels(driver);
-        pageHotels.clickButtonContinue();
-        pageHotels.openInputForm();
-        pageHotels.clickRadioButtonHotels();
-        pageHotels.setInputDestination("Moscow, Russia, DME, Domodedovo");
-        pageHotels.setInputChildrenInRoom("1");
-        pageHotels.setTodayCheckInDate();
-        pageHotels.setTodayCheckOutDate();
     }
 
     @Test
