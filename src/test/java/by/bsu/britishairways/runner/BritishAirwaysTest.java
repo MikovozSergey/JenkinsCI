@@ -106,15 +106,13 @@ public class BritishAirwaysTest {
         pageHotels.setTodayCheckOutDate();
     }
 
-    @Test(enabled = false)
-    public void whenSelectTheDateOfCheckInHotelAndEvictionFromHotelChangesNumberOfNights() {
-        PageHotels pageHotels = new PageHotels(driver);
-        pageHotels.clickButtonContinue();
-        pageHotels.openInputForm();
-        pageHotels.clickRadioButtonHotels();
-        pageHotels.setCheckInDate(LocalDate.now());
-        pageHotels.setCheckOutDate(LocalDate.now().plusDays(3L));
-        Assert.assertEquals(pageHotels.getCountNights(), "3");
+    @Test
+    public void departureDateCanBeEarlierThanReturnDate() {
+        PageFlights pageFlights = new PageFlights(driver);
+        pageFlights.clickButtonContinue();
+        pageFlights.openInputForm();
+        pageFlights.setDepartureDate(LocalDate.now().plusDays(1L));
+        Assert.assertFalse(pageFlights.isReturnDateCanBePicked(LocalDate.now().plusDays(2L)));
     }
 
     @BeforeClass
