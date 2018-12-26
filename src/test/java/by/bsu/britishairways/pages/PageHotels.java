@@ -78,10 +78,12 @@ public class PageHotels extends Page {
     }
 
     private void openCheckInCalendar() {
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(inputCheckIn));
         inputCheckIn.click();
     }
 
     private void openCheckOutCalendar() {
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(inputCheckOut));
         inputCheckOut.click();
     }
 
